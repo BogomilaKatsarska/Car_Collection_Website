@@ -146,6 +146,8 @@ def delete_profile(request):
         'form': form,
     }
 
+    return render(request, 'profiles/profile-delete.html', context)
+
 
 def edit_profile(request, pk):
     profile = Profile.objects \
@@ -165,11 +167,7 @@ def edit_profile(request, pk):
         'profile': profile,
     }
 
-    return render(
-        request,
-        'profiles/profile-edit.html',
-        context,
-    )
+    return render(request, 'profiles/profile-edit.html', context)
 
 
 def details_profile(request):
